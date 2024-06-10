@@ -84,6 +84,8 @@ void explainVector()
 	v.clear(); // erase alll element of vectro make mepty.
 
 	cout << v.empty() << endl; // it chack empty or note,,, true or false
+
+    //
 }
 
 int main()
