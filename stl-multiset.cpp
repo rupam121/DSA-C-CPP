@@ -19,6 +19,13 @@ void explainMultipleSet()
 
     ms.erase(ms.find(1), ms.find(1) + 2); // start , end prop are passing and middle 1 are erase..
 }
+
+void explainUSet(){
+    unordered_set<int> st;
+
+    // store random order
+    // opposite of sorted order.
+}
 int main()
 {
 
