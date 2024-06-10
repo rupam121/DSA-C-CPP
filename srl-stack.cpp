@@ -18,7 +18,8 @@ void explainStack()
 
     cout << st.size(); // 4
 
-    cout << st.empty(); // check if-it is empty.
+    // cout << st.empty(); // check if-it is empty.
+    // cout << st.size();  // 4
     stack<int> st1, st2;
     st1.swap(st2);
 }
