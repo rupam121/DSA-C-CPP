@@ -8,18 +8,18 @@ void explainDQ()
     pq.push(2);
     pq.emplace(3);
 
-    cout << pq.top(); // 10
-    pq.pop();         // 8,5,2
-    cout << pq.top(); // 8
+    cout << pq.top() << " "; // 3
+    pq.pop();
+    std::cout << pq.top() << " "; // 2
 
-    priority_queue<int, vector<int>, greater<int>> pq;
+    priority_queue<int, vector<int>, greater<int>> pq1;
 
-    pq.push(5);
-    pq.push(2);
-    pq.push(8);
+    pq1.push(5);
+    pq1.push(2);
+    pq1.push(8);
 
-    pq.emplace(10);
-    cout << pq.top(); // 2
+    pq1.emplace(10);
+    std::cout << pq1.top() << " "; // 2
 }
 int main()
 {
