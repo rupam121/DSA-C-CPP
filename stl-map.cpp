@@ -28,17 +28,44 @@ void explainMap()
     // this is the syntax
     auto it = mp.lower_bound(2);
     auto it = mp.upper_bound(3);
-
-
 }
 
-void explainMultiMap(){
+void explainMultiMap()
+{
     // everything same as map, it can store multiple keys
 }
-void explainUnorderMap(){
-    // 
+void explainUnorderMap()
+{
+    //
+}
+
+bool comp(pair<int, int> p1.pair<int, int> p2)
+{
+    if (p1.second < p2.second)
+        return true;
+    if (p1.second > p2.second)
+        return false;
+}
+void explainExtra()
+{
+    sort(a, a + n);
+
+    sort(v.begin(), v.end());
+    sort(a + 2, a + 4);
+
+    sort(a, a + n, greater<int>);
+    pair < int, int ? a[] = {{1, 2}, {1, 3}, {1, 4}};
+
+    sort{a, a + n, comp};
+
+    int num = 7;
+    int cnt = __builtin_popcount();
+
+    long long num = 12345678987654;
+    int cnt = __builtin_popcount();
 }
 int main()
 {
+    explainExtra();
     return 0;
 }
