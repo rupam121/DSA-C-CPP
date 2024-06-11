@@ -28,6 +28,16 @@ void explainMap()
     // this is the syntax
     auto it = mp.lower_bound(2);
     auto it = mp.upper_bound(3);
+
+    string s = "123";
+
+    do
+    {
+        cout << s << endl;
+
+    } while(next_permutation(s.begin(),s.end()));
+
+    int maxi = *max_element(a,a+n);
 }
 
 void explainMultiMap()
