@@ -4,7 +4,9 @@ int main()
 {
     int a[] = {5, 8, 3, 9, 6, 2, 10, 7, -1, 4};
     int n = sizeof(a);
-    int min = a[0], max = a[0];
+    int min = 0;
+    int max = 0;
+
     for (int i = 1; i < n; i++)
     {
         if (a[i] < min)
