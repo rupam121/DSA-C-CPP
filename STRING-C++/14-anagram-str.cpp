@@ -16,7 +16,7 @@ int main(){
 		    break;
 		}
 		if(b[i]=='\0'){
-			printf("it''s Anagram");
+			printf("it's Anagram");
 		}
 	}
 	
