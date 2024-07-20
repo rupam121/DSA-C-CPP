@@ -1,11 +1,17 @@
 #include <stdio.h>
 
+void swap(char a,char b){
+	char temp;
+	temp=a;
+	a=b;
+	b=temp;
+}
 void perm(char s[], int l, int h)
 {
     int i;
     if (l == h)
     {
-        printf(s);
+        printf("%s \n",s);
     }
     else
     {
@@ -17,9 +23,10 @@ void perm(char s[], int l, int h)
         }
     }
 }
+
 int main()
 {
-    char s[] = "abc";
+    char s[] = "abcc";
     perm(s, 0, 3);
     return 0;
 }
