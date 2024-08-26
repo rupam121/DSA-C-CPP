@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Circular Google Map with Planets</title>
+    <style>
+      body {
+        margin: 0;
+        background-color: #000;
+        overflow: hidden;
+      }
+
+      .container {
+        position: relative;
+        width: 100vw;
+        height: 100vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+
+      .circular-map {
+        position: relative;
+        width: 400px;
+        height: 400px;
+        border-radius: 50%;
+        overflow: hidden;
+        box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
+      }
+
+      .circular-map iframe {
+        width: 100%;
+        height: 100%;
+        border: none;
+        transform: scale(1.5);
+      }
+
+      .outer-space {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        width: 700px;
+        height: 700px;
+        border-radius: 50%;
+        border: 2px dashed rgba(255, 255, 255, 0.2);
+        transform: translate(-50%, -50%);
+        animation: rotate 60s linear infinite;
+      }
+
+      .planet {
+        position: absolute;
+        width: 50px;
+        height: 50px;
+        background-color: transparent;
+        background-size: cover;
+        border-radius: 50%;
+        box-shadow: 0 0 15px rgba(255, 255, 255, 0.5);
+      }
+
+      .planet:nth-child(1) {
+        top: 0;
+        left: 50%;
+        transform: translate(-50%, -100%);
+        background: url("https://via.placeholder.com/50/FF0000") no-repeat; /* Replace with actual planet image */
+      }
+
+      .planet:nth-child(2) {
+        bottom: 0;
+        left: 50%;
+        transform: translate(-50%, 100%);
+        background: url("https://via.placeholder.com/50/FFA500") no-repeat; /* Replace with actual planet image */
+      }
+
+      .planet:nth-child(3) {
+        left: 0;
+        top: 50%;
+        transform: translate(-100%, -50%);
+        background: url("https://zebaq.online/creative/dev/astro/wp-content/uploads/2024/08/icons8-planet-100.png")
+          no-repeat; /* Replace with actual planet image */
+      }
+
+      .planet:nth-child(4) {
+        right: 0;
+        top: 50%;
+        transform: translate(100%, -50%);
+        background: url("https://zebaq.online/creative/dev/astro/wp-content/uploads/2024/08/icons8-planet-100.png")
+          no-repeat; /* Replace with actual planet image */
+      }
+
+      @keyframes rotate {
+        from {
+          transform: translate(-50%, -50%) rotate(0deg);
+        }
+        to {
+          transform: translate(-50%, -50%) rotate(360deg);
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <div class="circular-map">
+        <iframe
+          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3153.523826050702!2d-122.42067918467857!3d37.77852017975864!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8085818e99e44e5b%3A0x64b65f7b41f44c4e!2sTwitter%20HQ!5e0!3m2!1sen!2sus!4v1618461743942!5m2!1sen!2sus"
+          allowfullscreen=""
+          loading="lazy"
+        >
+        </iframe>
+      </div>  
+      <div class="outer-space">
+        <div class="planet"></div>
+        <div class="planet"></div>
+        <div class="planet"></div>
+        <div class="planet"></div>
+      </div>
+    </div>
+  </body>
+</html>

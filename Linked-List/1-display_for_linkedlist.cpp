@@ -1,5 +1,5 @@
 #include <stdio.h>
-#include<stdlib.h>
+#include <stdlib.h>
 
 struct Node
 {
@@ -35,12 +35,23 @@ void Display(struct Node *p)
     }
 }
 
+//  Recursion in Display
+void RDisplay(struct Node *p)
+{
+    if (p != NULL)
+    {
+        printf("%d ", p->data);
+        RDisplay(p->next); // calling it-self
+    }
+}
+
 int main()
 {
     int A[] = {3, 5, 7, 10, 15};
 
     create(A, 5);
-    Display(first);
+    // Display(first);
+    RDisplay(first);
 
     return 0;
 }
