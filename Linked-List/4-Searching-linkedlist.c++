@@ -1,5 +1,4 @@
 #include <stdio.h>
-#include <stdlib.h>
 using namespace std;
 
 struct Node
@@ -27,46 +26,69 @@ void create(int A[], int n)
     }
 }
 
-int MAX(struct Node *p)
+int count(struct Node *p)
 {
-    int max = 0;
-
+    int l = 0;
     while (p)
     {
-        if (p->data > max)
-        {
-            max = p->data;
-        }
+        l++;
         p = p->next;
     }
-    return max;
+    return l;
 }
 
-int RMAX(struct Node *p)
+int Rcount(struct Node *p)
 {
-    int x = 0;
-    
-    if (p == 0)
+    if (p != NULL)
     {
-        return 0;
-    }
-    x = MAX(p->next);
-    if (x > p->data)
-    {
-        return x;
+        return Rcount(p->next) + 1;
     }
     else
     {
-        return x=p->data;
+        return 0;
     }
+}
+
+int sum(struct Node *p)
+{
+    int s = 0;
+    while (p != NULL)
+    {
+        s += p->data;
+        p = p->next;
+    }
+    return s;
+}
+
+int Rsum(struct Node *p)
+{
+    if (p == NULL)
+    {
+        return 0;
+    }
+    else
+    {
+        return Rsum(p->next) + p->data;
+    }
+}
+
+struct Node *LSearch(Node *p, int key)
+{
+    while (p != NULL)
+    {
+        if (key == p->data)
+        {
+            return p;
+        }
+        p = p->next;
+    }
+    return NULL;
 }
 
 int main()
 {
-    int A[] = {3, 5, 7, 10, 15, 8, 12, 20};
+    int A[] = {3, 5, 7, 10, 25, 8, 25, 8, 32, 2};
     create(A, 8);
-
-    printf(" Max is : %d", RMAX(first));
-
+    
     return 0;
 }
