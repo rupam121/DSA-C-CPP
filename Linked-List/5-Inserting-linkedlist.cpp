@@ -1,3 +1,6 @@
+
+// insert before 1st node or after nth node
+
 #include <stdio.h>
 #include <stdlib.h>
 using namespace std;
@@ -114,23 +117,43 @@ void Display(struct Node *p)
     }
 }
 
-int main()
+void Insert(struct Node *p, int index, int x)
 {
-    struct Node *temp;
-    int A[] = {3, 5, 7, 10, 25, 18, 25, 8, 32, 2};
-    create(A, 8);
-
-    temp = LSearch(first, 7);
-
-    if (temp)
+    struct Node *t; // temp node
+    if (index < 0 || index > count(p))
     {
-        printf("Key is found %d \n", temp->data);
+        return;
+    }
+    t = (struct Node *)malloc(sizeof(struct Node));
+    t->data = x;
+
+    if (index == 0)
+    {
+        t->next = first;
+        first = t;
     }
     else
     {
-        printf("Key is not found \n");
+        for (int i = 0; i < index - 1; i++)
+        {
+            p = p->next;
+        }
+        t->next = p->next;
+        p->next = t;
     }
+}
+
+int main()
+{
+    printf("LinkedList Insert: \n");
+    // int A[] = {3, 5, 7, 9, 1, 4, 55};
+    // create(A, 7);
+    Insert(first, 0, 100);
+    Insert(first, 1, 200);
+    Insert(first, 0, 300);
 
     Display(first);
+    printf("Length is: %d \n", count(first));
+
     return 0;
 }
